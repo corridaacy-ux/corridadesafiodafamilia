@@ -1,8 +1,18 @@
-const LINK_GOOGLE_FORMS = "https://forms.gle/wceRLE6F1drY1uch6";
+const LINK_GOOGLE_FORMS = "https://docs.google.com/forms/d/e/1FAIpQLSf5teEWjt8Ya-DE1M9oGxZ_AOOwN-y0XWkKF6AzW6GW1Ko49g/viewform?usp=header";
+
 const DATA_EVENTO = "2026-08-08T06:30:00-03:00";
 
-document.querySelectorAll('a[href="https://forms.gle/wceRLE6F1drY1uch6"]').forEach(link => {
-  link.href = https://forms.gle/wceRLE6F1drY1uch6;
+document.querySelectorAll("a").forEach(link => {
+  const texto = link.textContent.toLowerCase();
+
+  if (
+    texto.includes("inscreva") ||
+    texto.includes("inscrição") ||
+    texto.includes("inscrever")
+  ) {
+    link.href = LINK_GOOGLE_FORMS;
+    link.target = "_blank";
+  }
 });
 
 function atualizarContador() {
@@ -10,8 +20,11 @@ function atualizarContador() {
   const agora = new Date().getTime();
   const diferenca = alvo - agora;
 
+  const contador = document.getElementById("contador");
+  if (!contador) return;
+
   if (diferenca <= 0) {
-    document.getElementById("contador").innerHTML = "<strong>É hoje!</strong>";
+    contador.innerHTML = "<strong>É hoje!</strong>";
     return;
   }
 
