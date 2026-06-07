@@ -2,7 +2,7 @@ const LINK_GOOGLE_FORMS = "https://forms.gle/wceRLE6F1drY1uch6";
 const DATA_EVENTO = "2026-08-08T06:30:00-03:00";
 
 document.querySelectorAll('a[href="https://forms.gle/wceRLE6F1drY1uch6"]').forEach(link => {
-  link.href = LINK_GOOGLE_FORMS;
+  link.href = https://forms.gle/wceRLE6F1drY1uch6;
 });
 
 function atualizarContador() {
